@@ -22,8 +22,10 @@ text-align: center;
     background-repeat: no-repeat;
     width: 1200px;
     height: 550px;
-    border-radius: 32px;
-    background: rgb(18, 19, 45);
+    border-radius: 50px;
+    background-size: 1200px 550px;
+    /* background: rgb(18, 19, 45); */
+    background-color: rgba(18, 19, 45, 0.8)
    
 }
 
@@ -186,10 +188,19 @@ background: rgb(18, 19, 45);
         margin-left: 20px;
      }
      .profile-img {
+        /* padding: 10px; */
         
         width: 44px;
         height: 44px;
         background: url();
+     }
+
+     .title-cards{
+        
+        width: 326px;
+        height: 82px;
+        border-radius: 16px;
+        background: rgb(255, 255, 255);
      }
 
 /* footer  */

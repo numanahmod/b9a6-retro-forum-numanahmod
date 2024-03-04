@@ -80,10 +80,10 @@
     forum coffee mug!
     </p>
     <label class="input inp  input-bordered flex items-center gap-2">
-      <input type="text" class="grow" placeholder="Search here anything" />
-     <button class="banner-btn">Search</button>
+      <input id="search-field" type="text" class="grow" placeholder="Search here anything" />
+     <button onclick="handleSearch()" class="banner-btn">Search</button>
     </label>
-  </div>
+  </div> 
   <div class="bnr-right-side">
      <div class="flx flex-row justify-"><div><p>Registered user</p></div>   <div><p>  01</p></div>     </div>
      <div class="flx flex-row justify-"><div><p>Forum</p></div>   <div><p>  01</p></div>     </div>
@@ -100,6 +100,9 @@
   <section>
     <h1 class="let ">Let’s Discuss</h1>
     <p class="letp ">Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
+    <div id="loading-spinner" class="text-center my-28">
+      <span class="loading loading-spinner loading-lg"></span>
+        </div>
     <div class="flex grid-cols-2 justify-between">
       <div class="flex grid-cols-2 gap-10">
         <div id="card-container" class="">
@@ -146,8 +149,36 @@
           </div>
         </div> -->
       </div>
-      <div class="flex grid-cols-2 read-count-title">
-        <div class="flx flex-row"><div class="ml-8 mt-5"><p>Title </p></div>   <div class="ml-8 mt-5"><p> Mark as read [<span>0</span>] </p></div>
+      <div class="read-count-title">
+        <div class="flx flex grid-cols-2 "><div class="ml-8 mt-5"><p>Title </p></div>   <div class="ml-8 mt-5 -mr-16"><p class="inline-flex "> <span><svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
+          <defs>
+            <clipPath id="clip30_2429">
+              <rect id="Frame" width="24.000000" height="24.000000" fill="white" fill-opacity="0"/>
+            </clipPath>
+          </defs>
+          <rect id="Frame" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0"/>
+          <g clip-path="url(#clip30_2429)">
+            <path id="Vector" d="M7 12L12 17L22 7" stroke="#3DCE09" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+            <path id="Vector" d="M2 12L7 17M12 12L17 7" stroke="#3DCE09" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        </span> Mark as read (<span id="read-count" > 0 </span>) </p></div>
+      </div>
+      <div id="mark-read" class=" text-2xl font-bold p-6 pl-10 justify-items-start">
+         <!-- <div class="title-cards flex grid-cols-2 justify-between -ml-3"> 
+           <div> <h1 class="text-sm ml-2 mt-4"> 10 Kids Unaware of Their Halloween Costume</h1> </div>
+            <div class="ml-2 mt-4">
+              <p class="inline-flex gap-2"><svg width="22.500000" height="15.500000" viewBox="0 0 22.5 15.5" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
+                <defs/>
+                <path id="Vector" d="M9.6001 9.3999C10.0377 9.83752 10.6312 10.0834 11.25 10.0834C11.8688 10.0834 12.4623 9.83752 12.8999 9.3999C13.3375 8.96228 13.5833 8.3689 13.5833 7.75C13.5833 7.1311 13.3375 6.5376 12.8999 6.1001C12.4623 5.6626 11.8688 5.41675 11.25 5.41675C10.6312 5.41675 10.0377 5.6626 9.6001 6.1001C9.16248 6.5376 8.91669 7.1311 8.91669 7.75C8.91669 8.3689 9.16248 8.96228 9.6001 9.3999ZM11.25 14.75C7.04999 14.75 3.54999 12.4166 0.75 7.75C3.54999 3.08325 7.04999 0.75 11.25 0.75C15.45 0.75 18.95 3.08325 21.75 7.75C18.95 12.4166 15.45 14.75 11.25 14.75Z" stroke="#12132D" stroke-opacity="0.600000" stroke-width="1.500000" stroke-linejoin="round"/>
+              </svg>
+              <span class="-mt-1 text-sm mr-2">1,568</span>
+              </p>
+    
+            </div>
+          </div> -->
       </div>
     </div>
   </div>
@@ -170,7 +201,7 @@
   <section>
     <h1 class="let ">Latest Posts</h1>
     <p class="letp ">Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
-    <div id="latest-container" class="flex grid-cols-3 gap-10 mt-10"> 
+    <div id="latest-container" class="lg:flex lg:grid-cols-3 gap-10 mt-10 mb-5 pb-5"> 
       <!-- <div class="latest">
           <img class="latest-img" src="" alt="">
           <p class="inline-flex gap-5 ml-5"> <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
