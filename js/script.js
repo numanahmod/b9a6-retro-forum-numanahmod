@@ -77,37 +77,21 @@ const handleSearch = ( ) => {
     console.log(searchText)
 }
 
-// title mark 
-// const displayTitleCards = titleCards => {
-//   // console.log(cards);
-//   // step - 1 
-//   const cardContainer = document.getElementById('card-container');
-//   titleCards.forEach(titleCards => {
-//       console.log(titleCards);
-//       // step-2 create div
-//       const cardDiv =document.createElement('div');
-//       // cardDiv.classList = `flex grid-cols-2 card-1 gap-5 shadow-xl gap-8`;
-//       // step 3 inner html
-//       cardDiv.innerHTML = `
-//       <div class="title-cards flex grid-cols-2 justify-between -ml-3"> 
-//          <div> <h1 class="text-sm ml-2 mt-4"> 10 Kids Unaware of Their Halloween Costume</h1> </div>
-//           <div class="ml-2 mt-4">
-//             <p class="inline-flex gap-2"><svg width="22.500000" height="15.500000" viewBox="0 0 22.5 15.5" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        
-//               <defs/>
-//               <path id="Vector" d="M9.6001 9.3999C10.0377 9.83752 10.6312 10.0834 11.25 10.0834C11.8688 10.0834 12.4623 9.83752 12.8999 9.3999C13.3375 8.96228 13.5833 8.3689 13.5833 7.75C13.5833 7.1311 13.3375 6.5376 12.8999 6.1001C12.4623 5.6626 11.8688 5.41675 11.25 5.41675C10.6312 5.41675 10.0377 5.6626 9.6001 6.1001C9.16248 6.5376 8.91669 7.1311 8.91669 7.75C8.91669 8.3689 9.16248 8.96228 9.6001 9.3999ZM11.25 14.75C7.04999 14.75 3.54999 12.4166 0.75 7.75C3.54999 3.08325 7.04999 0.75 11.25 0.75C15.45 0.75 18.95 3.08325 21.75 7.75C18.95 12.4166 15.45 14.75 11.25 14.75Z" stroke="#12132D" stroke-opacity="0.600000" stroke-width="1.500000" stroke-linejoin="round"/>
-//             </svg>
-//             <span class="-mt-1 text-sm mr-2">1,568</span>
-//             </p>
+
+const toggleLoadingSpinner = () => {
+  const loadingSpinner = document.getElementById('loading-spinner');
+ 
+  setTimeout(() => {
+    console.log(loadingSpinner)
+  },2000);
   
-//           </div>
-//         </div>
-// `;
-//   // step 4 append child 
-//       cardContainer.appendChild(cardDiv);
-//   })
-  
-// }
+ } 
+
+
+
+
+
+
 let count =0;
 const buttonHandler = (title,view_count) => {
   // console.log(cards)
@@ -141,31 +125,8 @@ const titleCardContainer = document.getElementById('mark-read');
           </div>`;
         // step 4 append child 
             titleCardContainer.appendChild(titleCardDiv);
-        // })
+       
 
-
-
-
-
-
-
-  // const currentPost = allPost.find((post)=> post.id == id)
-  // // console.log(currentPost)
-  // 
-      
-  //       const reads = document.querySelectorAll(".read-button")
-
-  //       for (let index = 0; index < reads.length; index++) {
-  //         const read = reads[index];
-  //         read.addEventListener("click", function readCount(){
-  //           const currentNumber =document.getElementById('read-count');
-  //         const currentText = currentNumber.innerText;
-  //         const currentRead =parseInt(currentText);
-  //         const newBooking = currentRead +1;
-  //         currentNumber.innerText = newBooking;
-  //         })
-          
-  //       }
         
 }
 // spinner 
